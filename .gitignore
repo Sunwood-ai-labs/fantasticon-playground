@@ -136,3 +136,6 @@ out
 .SourceSageAssets/
 
 src/font/svg/*_backup.svg
+
+# Ignore build output
+dist/
