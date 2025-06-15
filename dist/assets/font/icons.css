@@ -1,0 +1,117 @@
+@font-face {
+    font-family: "icons";
+    src: url("./icons.eot?06bae091a2b80e047bd5ec6d47fa94ce#iefix") format("embedded-opentype"),
+url("./icons.woff2?06bae091a2b80e047bd5ec6d47fa94ce") format("woff2"),
+url("./icons.woff?06bae091a2b80e047bd5ec6d47fa94ce") format("woff");
+}
+
+i[class^="icon-"]:before, i[class*=" icon-"]:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zou-v3:before {
+    content: "\f101";
+}
+.icon-zou-v2:before {
+    content: "\f102";
+}
+.icon-zou-v1:before {
+    content: "\f103";
+}
+.icon-zou-v0_backup:before {
+    content: "\f104";
+}
+.icon-zou-v0:before {
+    content: "\f105";
+}
+.icon-sika-v4-1:before {
+    content: "\f106";
+}
+.icon-pdf:before {
+    content: "\f107";
+}
+.icon-instagram:before {
+    content: "\f108";
+}
+.icon-input_1-sika:before {
+    content: "\f109";
+}
+.icon-input_1-sika-v4-2-fllat:before {
+    content: "\f10a";
+}
+.icon-input_1-sika-v4-1_backup:before {
+    content: "\f10b";
+}
+.icon-input_1-sika-v4-0_backup:before {
+    content: "\f10c";
+}
+.icon-input_1-sika-v4-0:before {
+    content: "\f10d";
+}
+.icon-fixed:before {
+    content: "\f10e";
+}
+.icon-facebook:before {
+    content: "\f10f";
+}
+.icon-directionArrowRight:before {
+    content: "\f110";
+}
+.icon-directionArrowLeft:before {
+    content: "\f111";
+}
+.icon-cropped_5_resized:before {
+    content: "\f112";
+}
+.icon-cropped_5_backup:before {
+    content: "\f113";
+}
+.icon-cropped_5:before {
+    content: "\f114";
+}
+.icon-cropped_4_resized:before {
+    content: "\f115";
+}
+.icon-cropped_4_backup:before {
+    content: "\f116";
+}
+.icon-cropped_4:before {
+    content: "\f117";
+}
+.icon-cropped_3_resized:before {
+    content: "\f118";
+}
+.icon-cropped_3_backup:before {
+    content: "\f119";
+}
+.icon-cropped_3:before {
+    content: "\f11a";
+}
+.icon-cropped_2_resized:before {
+    content: "\f11b";
+}
+.icon-cropped_2_backup:before {
+    content: "\f11c";
+}
+.icon-cropped_2:before {
+    content: "\f11d";
+}
+.icon-cropped_1_resized:before {
+    content: "\f11e";
+}
+.icon-cropped_1_backup:before {
+    content: "\f11f";
+}
+.icon-cropped_1:before {
+    content: "\f120";
+}
+.icon-blank:before {
+    content: "\f121";
+}
