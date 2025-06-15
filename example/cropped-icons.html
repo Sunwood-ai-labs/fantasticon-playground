@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cropped/Resized アイコン集 - カスタムアイコンフォント</title>
+    <link rel="stylesheet" href="https://sunwood-ai-labs.github.io/fantasticon-playground/assets/font/icons.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .header h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .version-section {
+            margin: 40px 0;
+            padding: 30px;
+            border-radius: 12px;
+            background: #f8f9fa;
+            border-left: 5px solid #007bff;
+        }
+        
+        .version-title {
+            color: #007bff;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .icon-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .icon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            border-color: #007bff;
+        }
+        
+        .icon-display {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        .icon-card:hover .icon-display {
+            color: #007bff;
+            transform: scale(1.1);
+        }
+        
+        .icon-name {
+            font-family: 'Courier New', monospace;
+            background: #f1f3f4;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #333;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .comparison-section {
+            margin: 50px 0;
+            padding: 30px;
+            border-radius: 12px;
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .comparison-item {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .size-demo {
+            margin: 40px 0;
+            padding: 30px;
+            background: #e3f2fd;
+            border-radius: 12px;
+        }
+        
+        .size-demo h3 {
+            color: #1976d2;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .size-variants {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .size-item {
+            text-align: center;
+        }
+        
+        .size-label {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .usage-demo {
+            margin: 40px 0;
+            padding: 30px;
+            background: #fff3e0;
+            border-radius: 12px;
+            border-left: 5px solid #ff9800;
+        }
+        
+        .demo-item {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .code-snippet {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        
+        .color-variants {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .nav-links a {
+            margin: 0 15px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 グラレコ用 アイコン集</h1>
+            <p>最適化されたカスタムアイコンのバリエーション</p>
+        </div>
+
+        <div class="comparison-section">
+            <h2 style="text-align: center; margin-bottom: 30px;">📊 アイコンバリエーション比較</h2>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <i class="icon-cropped_1_resized" style="font-size: 4em; margin-bottom: 15px;"></i>
+                    <h4>リサイズ版</h4>
+                    <p>最適化済み</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="version-section">
+            <h2 class="version-title">
+                <i class="icon-cropped_1_resized"></i>
+                Cropped 1 シリーズ
+            </h2>
+            <div class="icon-grid">
+                <div class="icon-card">
+                    <div class="icon-display">
+                        <i class="icon-cropped_1_resized"></i>
+                    </div>
+                    <div class="icon-name">icon-cropped_1_resized</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="version-section">
+            <h2 class="version-title">
+                <i class="icon-cropped_2_resized"></i>
+                Cropped 2 シリーズ
+            </h2>
+            <div class="icon-grid">
+                <div class="icon-card">
+                    <div class="icon-display">
+                        <i class="icon-cropped_2_resized"></i>
+                    </div>
+                    <div class="icon-name">icon-cropped_2_resized</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="version-section">
+            <h2 class="version-title">
+                <i class="icon-cropped_3_resized"></i>
+                Cropped 3 シリーズ
+            </h2>
+            <div class="icon-grid">
+                <div class="icon-card">
+                    <div class="icon-display">
+                        <i class="icon-cropped_3_resized"></i>
+                    </div>
+                    <div class="icon-name">icon-cropped_3_resized</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="version-section">
+            <h2 class="version-title">
+                <i class="icon-cropped_4_resized"></i>
+                Cropped 4 シリーズ
+            </h2>
+            <div class="icon-grid">
+                <div class="icon-card">
+                    <div class="icon-display">
+                        <i class="icon-cropped_4_resized"></i>
+                    </div>
+                    <div class="icon-name">icon-cropped_4_resized</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="version-section">
+            <h2 class="version-title">
+                <i class="icon-cropped_5_resized"></i>
+                Cropped 5 シリーズ
+            </h2>
+            <div class="icon-grid">
+                <div class="icon-card">
+                    <div class="icon-display">
+                        <i class="icon-cropped_5_resized"></i>
+                    </div>
+                    <div class="icon-name">icon-cropped_5_resized</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="size-demo">
+            <h3>📏 サイズバリエーション例</h3>
+            <div class="size-variants">
+                <div class="size-item">
+                    <i class="icon-cropped_1_resized" style="font-size: 1em; color: #666;"></i>
+                    <div class="size-label">1em (16px)</div>
+                </div>
+                <div class="size-item">
+                    <i class="icon-cropped_2_resized" style="font-size: 1.5em; color: #007bff;"></i>
+                    <div class="size-label">1.5em (24px)</div>
+                </div>
+                <div class="size-item">
+                    <i class="icon-cropped_3_resized" style="font-size: 2em; color: #28a745;"></i>
+                    <div class="size-label">2em (32px)</div>
+                </div>
+                <div class="size-item">
+                    <i class="icon-cropped_4_resized" style="font-size: 3em; color: #dc3545;"></i>
+                    <div class="size-label">3em (48px)</div>
+                </div>
+                <div class="size-item">
+                    <i class="icon-cropped_5_resized" style="font-size: 4em; color: #6f42c1;"></i>
+                    <div class="size-label">4em (64px)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-demo">
+            <h3 style="color: #ff9800; margin-bottom: 25px;">💡 実用的な使用例</h3>
+            
+            <div class="demo-item">
+                <h4>🎨 カラーバリエーション</h4>
+                <div class="color-variants">
+                    <i class="icon-cropped_1_resized" style="font-size: 2em; color: #007bff;"></i>
+                    <i class="icon-cropped_2_resized" style="font-size: 2em; color: #28a745;"></i>
+                    <i class="icon-cropped_3_resized" style="font-size: 2em; color: #dc3545;"></i>
+                    <i class="icon-cropped_4_resized" style="font-size: 2em; color: #ffc107;"></i>
+                    <i class="icon-cropped_5_resized" style="font-size: 2em; color: #6f42c1;"></i>
+                </div>
+                <div class="code-snippet">
+&lt;i class="icon-cropped_1_resized" style="color: #007bff;"&gt;&lt;/i&gt;
+&lt;i class="icon-cropped_2_resized" style="color: #28a745;"&gt;&lt;/i&gt;
+&lt;i class="icon-cropped_3_resized" style="color: #dc3545;"&gt;&lt;/i&gt;
+                </div>
+            </div>
+
+            <div class="demo-item">
+                <h4>🔘 ボタンデザイン</h4>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin: 20px 0;">
+                    <button style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                        <i class="icon-cropped_1_resized"></i> オプション1
+                    </button>
+                    <button style="padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                        <i class="icon-cropped_2_resized"></i> オプション2
+                    </button>
+                    <button style="padding: 10px 20px; background: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                        <i class="icon-cropped_3_resized"></i> オプション3
+                    </button>
+                </div>
+                <div class="code-snippet">
+&lt;button&gt;
+    &lt;i class="icon-cropped_1_resized"&gt;&lt;/i&gt; オプション1
+&lt;/button&gt;
+                </div>
+            </div>
+
+            <div class="demo-item">
+                <h4>📋 リストアイテム</h4>
+                <ul style="list-style: none; padding: 0; max-width: 400px; margin: 20px auto;">
+                    <li style="padding: 10px; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                        <i class="icon-cropped_1_resized" style="margin-right: 10px; color: #007bff;"></i>
+                        プロジェクト管理
+                    </li>
+                    <li style="padding: 10px; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                        <i class="icon-cropped_2_resized" style="margin-right: 10px; color: #28a745;"></i>
+                        データ分析
+                    </li>
+                    <li style="padding: 10px; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                        <i class="icon-cropped_3_resized" style="margin-right: 10px; color: #dc3545;"></i>
+                        レポート作成
+                    </li>
+                </ul>
+                <div class="code-snippet">
+&lt;li&gt;
+    &lt;i class="icon-cropped_1_resized"&gt;&lt;/i&gt; プロジェクト管理
+&lt;/li&gt;
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">← サンプル集トップ</a>
+            <a href="basic-usage.html">基本的な使用例</a>
+            <a href="advanced-usage.html">高度な使用例</a>
+            <a href="https://sunwood-ai-labs.github.io/fantasticon-playground/assets/font/icons.html" target="_blank">全アイコン一覧</a>
+        </div>
+    </div>
+</body>
+</html>

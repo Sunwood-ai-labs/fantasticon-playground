@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高度な使用例 - カスタムアイコンフォント</title>
+    <link rel="stylesheet" href="https://sunwood-ai-labs.github.io/fantasticon-playground/assets/font/icons.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        /* アニメーション効果 */
+        .spin {
+            animation: spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .pulse {
+            animation: pulse 1.5s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse {
+            from { opacity: 1; }
+            to { opacity: 0.5; }
+        }
+        
+        /* ボタンスタイル */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 8px;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary { background: #007bff; }
+        .btn-danger { background: #dc3545; }
+        .btn-success { background: #28a745; }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        /* カードレイアウト */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        /* タブ */
+        .tab-container {
+            margin: 20px 0;
+        }
+        
+        .tab-buttons {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab-button {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .tab-button.active {
+            border-bottom-color: #007bff;
+            color: #007bff;
+        }
+        
+        /* メニュー */
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .menu li {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .menu a {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #333;
+            transition: background 0.2s;
+        }
+        
+        .menu a:hover {
+            background: #f8f9fa;
+        }
+        
+        .demo-section {
+            margin: 40px 0;
+            padding: 20px;
+            border-left: 4px solid #007bff;
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 カスタムアイコンフォント - 高度な使用例</h1>
+    
+    <div class="demo-section">
+        <h2>✨ アニメーション効果</h2>
+        <p>CSSアニメーションと組み合わせて動的な効果を追加：</p>
+        <div>
+            <i class="icon-cropped_1 spin" style="font-size: 2em; color: #007bff;"></i>
+            <span style="margin: 0 20px;">回転アニメーション</span>
+            
+            <i class="icon-cropped_2 pulse" style="font-size: 2em; color: #28a745;"></i>
+            <span>パルスアニメーション</span>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>🎯 ボタンとの組み合わせ</h2>
+        <div>
+            <button class="btn btn-primary">
+                <i class="icon-facebook"></i> Facebook でログイン
+            </button>
+            <button class="btn btn-danger">
+                <i class="icon-pdf"></i> PDF をダウンロード
+            </button>
+            <button class="btn btn-success">
+                <i class="icon-directionArrowRight"></i> 次のステップ
+            </button>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>📱 カードレイアウト</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <i class="icon-facebook" style="font-size: 3em; color: #1877f2;"></i>
+                </div>
+                <h3>Facebook連携</h3>
+                <p>Facebookアカウントでログインして、友達と共有しましょう。</p>
+            </div>
+            
+            <div class="card">
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <i class="icon-instagram" style="font-size: 3em; color: #E4405F;"></i>
+                </div>
+                <h3>Instagram投稿</h3>
+                <p>美しい写真をInstagramに投稿して世界に発信しましょう。</p>
+            </div>
+            
+            <div class="card">
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <i class="icon-pdf" style="font-size: 3em; color: #dc3545;"></i>
+                </div>
+                <h3>PDF出力</h3>
+                <p>レポートやドキュメントをPDF形式でエクスポートできます。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>🗂️ タブインターフェース</h2>
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-button active">
+                    <i class="icon-cropped_1"></i> ダッシュボード
+                </button>
+                <button class="tab-button">
+                    <i class="icon-cropped_2"></i> 設定
+                </button>
+                <button class="tab-button">
+                    <i class="icon-cropped_3"></i> プロフィール
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>📋 ナビゲーションメニュー</h2>
+        <ul class="menu" style="max-width: 300px;">
+            <li>
+                <a href="#">
+                    <i class="icon-cropped_1" style="margin-right: 10px;"></i>
+                    ホーム
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-cropped_2" style="margin-right: 10px;"></i>
+                    プロジェクト
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-pdf" style="margin-right: 10px;"></i>
+                    ドキュメント
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-cropped_3" style="margin-right: 10px;"></i>
+                    設定
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="demo-section">
+        <h2>🎨 レスポンシブデザイン</h2>
+        <p>画面サイズに応じてアイコンサイズを調整：</p>
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+            <div style="text-align: center; margin: 10px;">
+                <i class="icon-facebook" style="font-size: clamp(1em, 4vw, 3em); color: #1877f2;"></i>
+                <p>可変サイズ</p>
+            </div>
+            <div style="text-align: center; margin: 10px;">
+                <i class="icon-instagram" style="font-size: clamp(1em, 4vw, 3em); color: #E4405F;"></i>
+                <p>レスポンシブ</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 40px 0; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+        <p><strong>🔗 参考リンク</strong></p>
+        <a href="basic-usage.html">基本的な使用例</a> | 
+        <a href="https://sunwood-ai-labs.github.io/fantasticon-playground/assets/font/icons.html" target="_blank">アイコン一覧</a>
+    </div>
+</body>
+</html>

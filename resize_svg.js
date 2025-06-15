@@ -6,8 +6,8 @@ const path = require('path');
  * 元ファイルを壊さず、シンプルな方法でリサイズ
  */
 
-const inputFile = 'src/font/svg/input_1-sika-v2-1.svg';
-const outputFile = 'src/font/svg/input_1-sika-v2-1_resized.svg';
+const inputDir = 'src/font/raw';
+const outputDir = 'src/font/svg';
 const targetSize = 2000;
 
 function analyzeSVG(filePath) {
@@ -118,58 +118,37 @@ function safeResizeSVG(inputPath, outputPath, maxSize) {
     
     // ファイルを保存
     fs.writeFileSync(outputPath, newSVG, 'utf8');
-    
-    console.log(`\n✅ リサイズ完了: ${outputPath}`);
-    
-    // 結果を検証
-    const newAnalysis = analyzeSVG(outputPath);
-    if (newAnalysis) {
-      console.log(`\n🔍 結果検証: OK`);
-    }
-    
     return true;
-    
   } catch (error) {
     console.error(`❌ リサイズエラー: ${error.message}`);
     return false;
   }
 }
 
-function backupOriginal(filePath) {
-  const backupPath = filePath.replace('.svg', '_backup.svg');
-  if (!fs.existsSync(backupPath)) {
-    fs.copyFileSync(filePath, backupPath);
-    console.log(`💾 バックアップ作成: ${backupPath}`);
-  }
-}
-
-// メイン実行
-function main() {
-  const args = process.argv.slice(2);
-  const input = args[0] || inputFile;
-  const target = args[1] ? parseInt(args[1]) : targetSize;
-  const output = args[2] || input.replace('.svg', '_resized.svg');
-  
-  console.log(`🦌 SVG安全リサイズツール\n`);
-  
-  // ファイル存在チェック
-  if (!fs.existsSync(input)) {
-    console.error(`❌ ファイルが見つかりません: ${input}`);
+// メイン処理
+function resizeAllSVGs() {
+  if (!fs.existsSync(inputDir)) {
+    console.error(`❌ 入力ディレクトリが存在しません: ${inputDir}`);
     return;
   }
-  
-  // バックアップ作成
-  backupOriginal(input);
-  
-  // 分析とリサイズ実行
-  safeResizeSVG(input, output, target);
+  const files = fs.readdirSync(inputDir).filter(f => f.endsWith('.svg'));
+  if (files.length === 0) {
+    console.log('SVGファイルが見つかりません。');
+    return;
+  }
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+  files.forEach(file => {
+    const inputPath = path.join(inputDir, file);
+    const outputPath = path.join(outputDir, file);
+    console.log(`\n=== ${file} ===`);
+    safeResizeSVG(inputPath, outputPath, targetSize);
+  });
+  console.log('\n✅ すべてのSVGのリサイズが完了しました。');
 }
 
 if (require.main === module) {
-  main();
+  resizeAllSVGs();
 }
-
-console.log('\n💡 使用方法:');
-console.log('node resize_svg.js [入力ファイル] [目標サイズ] [出力ファイル]');
-console.log('例: node resize_svg.js deer.svg 2000 deer_large.svg');
-console.log('\n⚠️  元ファイルは自動でバックアップされます');
+    
