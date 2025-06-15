@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Custom icon font CDN using Fantasticon and GitHub Pages",
   "scripts": {
-    "build": "fantasticon",
-    "dev": "fantasticon --watch",
+    "build": "fantasticon src/font/svg/ -o dist/assets/font/",
+    "dev": "fantasticon src/font/svg/ -o dist/assets/font/ --watch",
     "clean": "rm -rf dist"
   },
   "devDependencies": {
