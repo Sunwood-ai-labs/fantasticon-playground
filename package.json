@@ -1,9 +1,23 @@
 {
+  "name": "fantasticon-playground",
+  "version": "1.0.0",
+  "description": "Custom icon font CDN using Fantasticon and GitHub Pages",
+  "scripts": {
+    "build": "fantasticon",
+    "dev": "fantasticon --watch",
+    "clean": "rm -rf dist"
+  },
   "devDependencies": {
     "fantasticon": "^3.0.0"
   },
   "dependencies": {
     "sharp": "^0.34.2",
     "svgo": "^3.3.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sunwood-ai-labs/fantasticon-playground.git"
+  },
+  "homepage": "https://sunwood-ai-labs.github.io/fantasticon-playground/",
+  "keywords": ["icon-font", "cdn", "github-pages", "fantasticon"]
 }
