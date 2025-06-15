@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本的な使用例 - カスタムアイコンフォント</title>
+    <!-- CDNからアイコンフォントを読み込み -->
+    <link rel="stylesheet" href="https://sunwood-ai-labs.github.io/fantasticon-playground/assets/font/icons.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .demo-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        .icon-demo {
+            margin: 10px;
+            display: inline-block;
+        }
+        .large { font-size: 2em; }
+        .medium { font-size: 1.5em; }
+        .small { font-size: 1em; }
+        .colored-facebook { color: #1877f2; }
+        .colored-instagram { color: #E4405F; }
+        .colored-pdf { color: #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>🎨 カスタムアイコンフォント - 基本的な使用例</h1>
+    
+    <div class="demo-section">
+        <h2>📦 CDN読み込み</h2>
+        <p>HTMLの&lt;head&gt;に以下を追加するだけでOK：</p>
+        <pre>&lt;link rel="stylesheet" href="https://sunwood-ai-labs.github.io/fantasticon-playground/assets/font/icons.css"&gt;</pre>
+    </div>
+
+    <div class="demo-section">
+        <h2>🚀 基本的な使い方</h2>
+        <p>アイコンを表示するには、&lt;i&gt;タグにクラスを指定：</p>
+        <div>
+            <span class="icon-demo">
+                <i class="icon-facebook"></i> 
+                <code>icon-facebook</code>
+            </span>
+            <span class="icon-demo">
+                <i class="icon-instagram"></i> 
+                <code>icon-instagram</code>
+            </span>
+            <span class="icon-demo">
+                <i class="icon-pdf"></i> 
+                <code>icon-pdf</code>
+            </span>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>📏 サイズ調整</h2>
+        <p>font-sizeでサイズを調整できます：</p>
+        <div>
+            <i class="icon-facebook small"></i> <code>font-size: 1em</code><br>
+            <i class="icon-facebook medium"></i> <code>font-size: 1.5em</code><br>
+            <i class="icon-facebook large"></i> <code>font-size: 2em</code>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>🎨 色の変更</h2>
+        <p>colorプロパティで色を変更できます：</p>
+        <div>
+            <i class="icon-facebook colored-facebook large"></i> Facebook Blue<br>
+            <i class="icon-instagram colored-instagram large"></i> Instagram Pink<br>
+            <i class="icon-pdf colored-pdf large"></i> PDF Red
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>🔗 実用的な例</h2>
+        <h3>ソーシャルメディアリンク</h3>
+        <div style="margin: 15px 0;">
+            <a href="#" style="text-decoration: none; margin-right: 15px;">
+                <i class="icon-facebook colored-facebook medium"></i>
+            </a>
+            <a href="#" style="text-decoration: none; margin-right: 15px;">
+                <i class="icon-instagram colored-instagram medium"></i>
+            </a>
+        </div>
+
+        <h3>ナビゲーション</h3>
+        <div style="margin: 15px 0;">
+            <button style="padding: 8px 12px; margin-right: 10px;">
+                <i class="icon-directionArrowLeft"></i> 前へ
+            </button>
+            <button style="padding: 8px 12px;">
+                次へ <i class="icon-directionArrowRight"></i>
+            </button>
+        </div>
+
+        <h3>ファイルリンク</h3>
+        <div style="margin: 15px 0;">
+            <a href="#" style="text-decoration: none; color: #333;">
+                <i class="icon-pdf colored-pdf"></i> 資料をダウンロード
+            </a>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>📋 利用可能なアイコン一覧</h2>
+        <p>すべてのアイコンは<a href="https://sunwood-ai-labs.github.io/fantasticon-playground/assets/font/icons.html" target="_blank">こちら</a>で確認できます。</p>
+    </div>
+</body>
+</html>
