@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Custom icon font CDN using Fantasticon and GitHub Pages",
   "scripts": {
-    "build": "bash process_fonts.sh",
+    "build": "bash process_fonts.sh && node ./generate_index.js",
     "dev": "fantasticon src/font/svg/ -o dist/assets/font/ --watch",
     "clean": "rm -rf dist",
     "process-fonts": "bash process_fonts.sh"
