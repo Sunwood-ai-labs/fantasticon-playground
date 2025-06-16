@@ -149,6 +149,13 @@ function resizeAllSVGs() {
 }
 
 if (require.main === module) {
-  resizeAllSVGs();
+  // コマンドライン引数で個別ファイル指定があればそれを処理
+  if (process.argv.length === 4) {
+    const inputPath = process.argv[2];
+    const outputPath = process.argv[3];
+    safeResizeSVG(inputPath, outputPath, targetSize);
+  } else {
+    resizeAllSVGs();
+  }
 }
     
