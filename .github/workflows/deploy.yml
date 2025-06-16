@@ -24,9 +24,9 @@ jobs:
         run: npm run build
       - name: Test build completed
         run: |
-          test -f dist/assets/font/icons.css
-          test -f dist/assets/font/icons.woff
-          test -f dist/assets/font/icons.woff2
+          test -n "$(find dist/assets -type f -path '*/font/icons.css' | head -n1)"
+          test -n "$(find dist/assets -type f -path '*/font/icons.woff' | head -n1)"
+          test -n "$(find dist/assets -type f -path '*/font/icons.woff2' | head -n1)"
 
   deploy:
     name: Deploy to GitHub Pages
